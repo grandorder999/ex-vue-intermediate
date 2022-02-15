@@ -97,4 +97,28 @@ export default new Vuex.Store({
   mutations: {},
   actions: {},
   modules: {},
+  getters: {
+    /**
+     * 野球チーム一覧を返す
+     *
+     * @param state - ステート
+     * @returns 野球チーム一覧
+     */
+
+    getBaseBallTeam(state): Array<Team> {
+      return state.teams;
+    },
+    /**
+     * IDから野球チームを１件検索し返す
+     *
+     * @param state - ステート
+     * @returns 野球チーム情報
+     */
+
+    getTeamById(state) {
+      return (id: number) => {
+        return state.teams.filter((team) => team.id === id)[0];
+      };
+    },
+  },
 });
