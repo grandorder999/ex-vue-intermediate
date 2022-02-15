@@ -152,7 +152,7 @@ export default new Vuex.Store({
      * @param state - ステート
      * @returns 野球チーム一覧
      */
-    getBaseBallTeam(state): Array<Team> {
+    getBaseBallTeams(state): Array<Team> {
       return state.teams;
     },
     /**
@@ -164,6 +164,29 @@ export default new Vuex.Store({
     getTeamById(state) {
       return (id: number) => {
         return state.teams.filter((team) => team.id === id)[0];
+      };
+    },
+    /**
+     * ホテル一覧を返す
+     *
+     * @param state - ステート
+     * @returns ホテル一覧
+     */
+    getHotels(state): Array<Hotel> {
+      return state.hotels;
+    },
+    /**
+     * 値段からホテルを検索し返す.
+     *
+     * @param state - ステート
+     * @returns 検索されたホテル一覧情報
+     */
+    getHotelByLessThanPrice(state) {
+      return (price: number) => {
+        const hotels = state.hotels.filter(
+          (hotel: Hotel) => hotel.price <= price
+        );
+        return hotels;
       };
     },
   },
