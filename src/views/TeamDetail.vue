@@ -3,7 +3,7 @@
     <form>
       <div class="title">球団名</div>
       <div>{{ selectTeam.teamName }}</div>
-      <div class="title">本境地</div>
+      <div class="title">本拠地</div>
       <div>{{ selectTeam.headquarters }}</div>
       <div class="title">発足日</div>
       <div>{{ selectTeam.inaugurationFormat }}</div>
