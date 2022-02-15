@@ -19,7 +19,7 @@ export default class Ex01 extends Vue {
    *@returns 野球チーム一覧
    */
   get teams(): Array<Team> {
-    return this.$store.getters.getBaseBallTeam;
+    return this.$store.getters.getBaseBallTeams;
   }
 }
 </script>
