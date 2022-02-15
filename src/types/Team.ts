@@ -15,8 +15,9 @@ export class Team {
     // 歴史
     private _history: string
   ) {}
-
-  //Dateをフォーマットにして返す
+  /**
+   * Dateをフォーマットにして返す.
+   */
   get inaugurationFormat(): string {
     return format(this.inauguration, "yyyy年MM月dd日");
   }

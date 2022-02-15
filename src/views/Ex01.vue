@@ -16,6 +16,7 @@ import { Team } from "@/types/Team";
 export default class Ex01 extends Vue {
   /**
    *Vuex内の野球チーム情報を取得し返す.
+   *@returns 野球チーム一覧
    */
   get teams(): Array<Team> {
     return this.$store.getters.getBaseBallTeam;

@@ -104,7 +104,6 @@ export default new Vuex.Store({
      * @param state - ステート
      * @returns 野球チーム一覧
      */
-
     getBaseBallTeam(state): Array<Team> {
       return state.teams;
     },
@@ -114,7 +113,6 @@ export default new Vuex.Store({
      * @param state - ステート
      * @returns 野球チーム情報
      */
-
     getTeamById(state) {
       return (id: number) => {
         return state.teams.filter((team) => team.id === id)[0];
