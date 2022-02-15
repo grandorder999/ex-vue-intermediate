@@ -30,7 +30,13 @@ import { Component, Vue } from "vue-property-decorator";
 export default class XXXComponent extends Vue {
   private searchPrice = "";
   private searchHotels = [];
-
+  /**
+   * 検索する.
+   *
+   * @remarks
+   * 入力された値段以下のホテルを検索する
+   * 未入力でボタンが押された場合には全件検索される
+   */
   search(): void {
     let searchPriceNumber = Number(this.searchPrice);
     this.searchHotels =
