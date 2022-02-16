@@ -3,7 +3,7 @@
     <h2>ホテル検索</h2>
     <input type="number" v-model.number="searchPrice" />円以下<br />
     <button type="button" v-on:click="search">検索</button>
-    <span v-for="hotel of searchHotels" v-bind:key="hotel.id">
+    <span v-for="hotel of Hotels" v-bind:key="hotel.id">
       <table border="1">
         <tr>
           <th>ホテル名</th>
@@ -29,7 +29,7 @@ import { Component, Vue } from "vue-property-decorator";
 @Component
 export default class XXXComponent extends Vue {
   private searchPrice = "";
-  private searchHotels = [];
+  private Hotels = [];
   /**
    * 検索する.
    *
@@ -39,10 +39,10 @@ export default class XXXComponent extends Vue {
    */
   search(): void {
     let searchPriceNumber = Number(this.searchPrice);
-    this.searchHotels =
-      this.$store.getters.getHotelByLessThanPrice(searchPriceNumber);
+    this.Hotels =
+      this.$store.getters.getHotelsByLessThanPrice(searchPriceNumber);
     if (this.searchPrice === "") {
-      this.searchHotels = this.$store.getters.getHotels;
+      this.Hotels = this.$store.getters.getHotels;
     }
   }
 }

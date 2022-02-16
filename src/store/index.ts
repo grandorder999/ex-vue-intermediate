@@ -147,7 +147,7 @@ export default new Vuex.Store({
   modules: {},
   getters: {
     /**
-     * 野球チーム一覧を返す
+     * 野球チーム一覧を返す.
      *
      * @param state - ステート
      * @returns 野球チーム一覧
@@ -156,7 +156,7 @@ export default new Vuex.Store({
       return state.teams;
     },
     /**
-     * IDから野球チームを１件検索し返す
+     * IDから野球チームを１件検索し返す.
      *
      * @param state - ステート
      * @returns 野球チーム情報
@@ -167,7 +167,7 @@ export default new Vuex.Store({
       };
     },
     /**
-     * ホテル一覧を返す
+     * ホテル一覧を返す.
      *
      * @param state - ステート
      * @returns ホテル一覧
@@ -181,7 +181,7 @@ export default new Vuex.Store({
      * @param state - ステート
      * @returns 検索されたホテル一覧情報
      */
-    getHotelByLessThanPrice(state) {
+    getHotelsByLessThanPrice(state) {
       return (price: number) => {
         const hotels = state.hotels.filter(
           (hotel: Hotel) => hotel.price <= price
